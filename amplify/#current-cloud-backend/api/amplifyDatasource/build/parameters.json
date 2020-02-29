@@ -1,0 +1,8 @@
+{
+    "CreateAPIKey": 1,
+    "AppSyncApiName": "amplifyDatasource",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": "false",
+    "S3DeploymentBucket": "amplify-meetjs-amplify-datastore-prodmeet-215802-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/de3ad2b99f9ea0b368b7b0034775b251de1d647d"
+}
