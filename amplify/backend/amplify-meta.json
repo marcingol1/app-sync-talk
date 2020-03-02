@@ -35,7 +35,7 @@
                 "s3TemplateURL": "https://s3.amazonaws.com/amplify-meetjs-amplify-datastore-prodmeet-215802-deployment/amplify-cfn-templates/api/cloudformation-template.json",
                 "logicalId": "apiamplifyDatasource"
             },
-            "lastPushTimeStamp": "2020-03-01T22:33:47.130Z",
+            "lastPushTimeStamp": "2020-03-02T20:20:27.537Z",
             "lastPushDirHash": "pbIfoUH/5mvAD+XWCBSxyli5EM0="
         }
     }

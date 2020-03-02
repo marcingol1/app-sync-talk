@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -28,16 +28,20 @@ function onDeleteAll() {
   DataStore.delete(Post, Predicates.ALL);
 }
 
-async function onQuery() {
-  const posts = await DataStore.query(Post, c => c.rating('gt', 4));
-
-  console.log(posts);
-}
-
 function App() {
+  const [posts, setPosts] = useState([]);
+
+  async function onQuery() {
+    const data = await DataStore.query(Post, c => c.rating('gt', 1));
+    console.log({ data });
+    setPosts(data);
+  }
+
   useEffect(() => {
+    onQuery();
     const subscription = DataStore.observe(Post).subscribe(msg => {
       console.log(msg.model, msg.opType, msg.element);
+      onQuery();
     });
 
     return () => subscription.unsubscribe();
@@ -48,21 +52,25 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <div>
-          <input type="button" value="NEW" onClick={onCreate} />
+          <input
+            type="button"
+            value="NEW"
+            onClick={async () => {
+              onCreate();
+            }}
+          />
           <input type="button" value="DELETE ALL" onClick={onDeleteAll} />
           <input type="button" value="QUERY rating > 4" onClick={onQuery} />
         </div>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <main>
+          <ul>
+            {posts.map(post => (
+              <li>
+                {post && post.title} - {post && post.rating}
+              </li>
+            ))}
+          </ul>
+        </main>
       </header>
     </div>
   );

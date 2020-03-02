@@ -4,5 +4,14 @@
     ],
     "projectName": "meetjs-amplify-datastore",
     "version": "3.0",
-    "frontend": "ios"
+    "frontend": "javascript",
+    "javascript": {
+        "framework": "react-native",
+        "config": {
+            "SourceDir": "/",
+            "DistributionDir": "/",
+            "BuildCommand": "npm run-script build",
+            "StartCommand": "npm run-script start"
+        }
+    }
 }

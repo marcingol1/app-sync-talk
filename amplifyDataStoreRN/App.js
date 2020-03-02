@@ -7,7 +7,7 @@ import {Text, StyleSheet, ScrollView} from 'react-native';
 
 import Amplify from '@aws-amplify/core';
 import {DataStore, Predicates} from '@aws-amplify/datastore';
-import {Post, PostStatus, Comment} from './src/models'; // src/models';
+import {Post, PostStatus, Comment} from './src/models';
 
 import awsConfig from './aws-exports';
 Amplify.configure(awsConfig);
@@ -52,30 +52,28 @@ class App extends Component {
   }
 
   async onCreatePostAndComments() {
-    const post = new Post({
-      title: `New Post with comments ${Date.now()}`,
-      rating: 5,
-      status: PostStatus.ACTIVE,
-    });
-
-    await DataStore.save(post);
-
-    for (let i = 0; i < 2; i++) {
-      DataStore.save(
-        new Comment({
-          content: `New comment ${Date.now()}`,
-          post,
-        }),
-      );
-    }
+    // const post = new Post({
+    //   title: `New Post with comments ${Date.now()}`,
+    //   rating: 5,
+    //   status: PostStatus.ACTIVE,
+    // });
+    // await DataStore.save(post);
+    // for (let i = 0; i < 2; i++) {
+    //   DataStore.save(
+    //     new Comment({
+    //       content: `New comment ${Date.now()}`,
+    //       post,
+    //     }),
+    //   );
+    // }
   }
 
   onQuery = async () => {
     const posts = await DataStore.query(Post, c => c.rating('gt', 2));
     console.log('QUERY_POSTS_RESULT', posts);
-    const comments = await DataStore.query(Comment);
+    // const comments = await DataStore.query(Comment);
     this.setState({posts});
-    console.log('QUERY_COMMENTS_RESULT', comments);
+    // console.log('QUERY_COMMENTS_RESULT', comments);
   };
 
   onDelete = async () => {
