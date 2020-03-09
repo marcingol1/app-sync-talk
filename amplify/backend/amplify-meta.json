@@ -1,43 +1,43 @@
 {
-    "providers": {
-        "awscloudformation": {
-            "AuthRoleName": "amplify-meetjs-amplify-datastore-prodmeet-215802-authRole",
-            "UnauthRoleArn": "arn:aws:iam::438086634750:role/amplify-meetjs-amplify-datastore-prodmeet-215802-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::438086634750:role/amplify-meetjs-amplify-datastore-prodmeet-215802-authRole",
-            "Region": "us-east-1",
-            "DeploymentBucketName": "amplify-meetjs-amplify-datastore-prodmeet-215802-deployment",
-            "UnauthRoleName": "amplify-meetjs-amplify-datastore-prodmeet-215802-unauthRole",
-            "StackName": "amplify-meetjs-amplify-datastore-prodmeet-215802",
-            "StackId": "arn:aws:cloudformation:us-east-1:438086634750:stack/amplify-meetjs-amplify-datastore-prodmeet-215802/84e85b50-5811-11ea-9504-0e0494eb61ff",
-            "AmplifyAppId": "d2u4trrczk7yfj"
-        }
-    },
-    "api": {
-        "amplifyDatasource": {
-            "service": "AppSync",
-            "providerPlugin": "awscloudformation",
-            "output": {
-                "authConfig": {
-                    "additionalAuthenticationProviders": [],
-                    "defaultAuthentication": {
-                        "authenticationType": "API_KEY",
-                        "apiKeyConfig": {
-                            "description": "",
-                            "apiKeyExpirationDays": 7
-                        }
-                    }
-                },
-                "GraphQLAPIIdOutput": "b6uhql4g6ndkbfapukava3fi34",
-                "GraphQLAPIEndpointOutput": "https://shrw3yo4m5e5jichxvsc75oeca.appsync-api.us-east-1.amazonaws.com/graphql",
-                "GraphQLAPIKeyOutput": "da2-w53pc5pavre2fepy6gzyv3nwfy"
-            },
-            "lastPushTimeStamp": "2020-03-09T21:09:58.196Z",
-            "providerMetadata": {
-                "s3TemplateURL": "https://s3.amazonaws.com/amplify-meetjs-amplify-datastore-prodmeet-215802-deployment/amplify-cfn-templates/api/cloudformation-template.json",
-                "logicalId": "apiamplifyDatasource"
-            },
-            "lastPushDirHash": "UDBiP9SSibB8H73KuCQOATNPQAI="
-        }
-    },
-    "auth": {}
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-meetjs-amplify-datastore-prodmeet-215802-authRole",
+      "UnauthRoleArn": "arn:aws:iam::438086634750:role/amplify-meetjs-amplify-datastore-prodmeet-215802-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::438086634750:role/amplify-meetjs-amplify-datastore-prodmeet-215802-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-meetjs-amplify-datastore-prodmeet-215802-deployment",
+      "UnauthRoleName": "amplify-meetjs-amplify-datastore-prodmeet-215802-unauthRole",
+      "StackName": "amplify-meetjs-amplify-datastore-prodmeet-215802",
+      "StackId": "arn:aws:cloudformation:us-east-1:438086634750:stack/amplify-meetjs-amplify-datastore-prodmeet-215802/84e85b50-5811-11ea-9504-0e0494eb61ff",
+      "AmplifyAppId": "d2u4trrczk7yfj"
+    }
+  },
+  "api": {
+    "amplifyDatasource": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [],
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "description": "",
+              "apiKeyExpirationDays": 7
+            }
+          }
+        },
+        "GraphQLAPIIdOutput": "b6uhql4g6ndkbfapukava3fi34",
+        "GraphQLAPIEndpointOutput": "https://shrw3yo4m5e5jichxvsc75oeca.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-ka2wklfzvrha3d5m4dioswivbu"
+      },
+      "lastPushTimeStamp": "2020-03-09T21:09:58.196Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-meetjs-amplify-datastore-prodmeet-215802-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiamplifyDatasource"
+      },
+      "lastPushDirHash": "UDBiP9SSibB8H73KuCQOATNPQAI="
+    }
+  },
+  "auth": {}
 }
