@@ -13,7 +13,7 @@ Amplify.configure(awsconfig);
 function onCreate() {
   DataStore.save(
     new Post({
-      title: `New title ${Date.now()}`,
+      title: `New Post Desktop ${Date.now()}`,
       rating: (function getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
@@ -65,9 +65,7 @@ function App() {
         <main>
           <ul>
             {posts.map(post => (
-              <li key={post.id}>
-                {post && post.title} - {post && post.rating}
-              </li>
+              <li key={post.id}>{`${post.title} ${post.rating}`}</li>
             ))}
           </ul>
         </main>

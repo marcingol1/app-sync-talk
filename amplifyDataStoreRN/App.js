@@ -40,7 +40,7 @@ class App extends Component {
   onCreatePost() {
     DataStore.save(
       new Post({
-        title: `New Post ${Date.now()}`,
+        title: `New Post Mobile ${Date.now()}`,
         rating: (function getRandomInt(min, max) {
           min = Math.ceil(min);
           max = Math.floor(max);
