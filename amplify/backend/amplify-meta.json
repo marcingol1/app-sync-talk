@@ -31,7 +31,7 @@
                 "GraphQLAPIEndpointOutput": "https://shrw3yo4m5e5jichxvsc75oeca.appsync-api.us-east-1.amazonaws.com/graphql",
                 "GraphQLAPIKeyOutput": "da2-w53pc5pavre2fepy6gzyv3nwfy"
             },
-            "lastPushTimeStamp": "2020-03-09T21:04:14.929Z",
+            "lastPushTimeStamp": "2020-03-09T21:09:58.196Z",
             "providerMetadata": {
                 "s3TemplateURL": "https://s3.amazonaws.com/amplify-meetjs-amplify-datastore-prodmeet-215802-deployment/amplify-cfn-templates/api/cloudformation-template.json",
                 "logicalId": "apiamplifyDatasource"
