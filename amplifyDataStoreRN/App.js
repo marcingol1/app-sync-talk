@@ -7,7 +7,7 @@ import {Text, StyleSheet, ScrollView} from 'react-native';
 
 import Amplify from '@aws-amplify/core';
 import {DataStore, Predicates} from '@aws-amplify/datastore';
-import {Post, PostStatus, Comment} from './src/models';
+import {Post, PostStatus} from './src/models';
 
 import awsConfig from './aws-exports';
 Amplify.configure(awsConfig);
@@ -51,23 +51,6 @@ class App extends Component {
     );
   }
 
-  async onCreatePostAndComments() {
-    // const post = new Post({
-    //   title: `New Post with comments ${Date.now()}`,
-    //   rating: 5,
-    //   status: PostStatus.ACTIVE,
-    // });
-    // await DataStore.save(post);
-    // for (let i = 0; i < 2; i++) {
-    //   DataStore.save(
-    //     new Comment({
-    //       content: `New comment ${Date.now()}`,
-    //       post,
-    //     }),
-    //   );
-    // }
-  }
-
   onQuery = async () => {
     const posts = await DataStore.query(Post, c => c.rating('gt', 2));
     console.log('QUERY_POSTS_RESULT', posts);
@@ -86,18 +69,17 @@ class App extends Component {
       <ScrollView
         style={styles.scrollview}
         contentContainerStyle={styles.container}>
-        <Text style={styles.text} onPress={this.onCreatePost}>
+        <Text style={styles.button} onPress={this.onCreatePost}>
           Create Post
         </Text>
-        <Text style={styles.text} onPress={this.onCreatePostAndComments}>
-          Create Post & Comments
-        </Text>
-        <Text style={styles.text} onPress={this.onQuery}>
+        <Text style={styles.button} onPress={this.onQuery}>
           Query Posts
         </Text>
-        <Text style={styles.text} onPress={this.onDelete}>
+        <Text style={styles.button} onPress={this.onDelete}>
           Delete All Posts
         </Text>
+
+        <Text style={styles.text}>POSTS: </Text>
         {this.state.posts.map((post, i) => (
           <Text key={i}>{`${post.title} ${post.rating}`}</Text>
         ))}
@@ -108,11 +90,20 @@ class App extends Component {
 
 const styles = StyleSheet.create({
   scrollview: {
-    paddingTop: 40,
+    paddingTop: 60,
     flex: 1,
+    backgroundColor: '#eee',
   },
   container: {
     alignItems: 'center',
+  },
+  button: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 15,
+    borderRadius: 5,
+    borderWidth: 2,
+    padding: 5,
   },
   text: {
     fontSize: 20,

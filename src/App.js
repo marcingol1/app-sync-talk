@@ -60,12 +60,12 @@ function App() {
             }}
           />
           <input type="button" value="DELETE ALL" onClick={onDeleteAll} />
-          <input type="button" value="QUERY rating > 4" onClick={onQuery} />
+          <input type="button" value="QUERY rating > 1" onClick={onQuery} />
         </div>
         <main>
           <ul>
             {posts.map(post => (
-              <li>
+              <li key={post.id}>
                 {post && post.title} - {post && post.rating}
               </li>
             ))}
